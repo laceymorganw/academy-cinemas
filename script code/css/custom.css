@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+/*Creates global CSS variables that can be reused through out the file*/ 
+:root{
+    --main-color: rgb(88, 21, 21);
+    --main-color-transparent: rgba(255, 157, 0, 0.7);
+    --secondary-color: rgb(255, 157, 0);
+    --third-color: rgb(255, 255, 255);
+    --body-text-color: rgb(44, 44, 44);
+    --link-text-color-hover: rgb(88, 21, 21);
+    --main-font-family: 'Limelight', cursive;
+    --secondary-font-family:'Josefin sans', serif;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.body-background{
+    background-image: url("../images/theatre-curtains.jpg"); /*Tells the browser to back out
+    of the css folder and then go into the iamges folder by using the double dot relative file path*/
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+/*NAVBAR*/
+.navbar{
+    background: var(--main-color-transparent);
+    height: 100px;
+}
+
+/*Affects the title in the navbar Academy Cinemas*/
+.navbar-brand{
+    color: var(--third-color);
+    font-weight: 600;
+    font-family: var(--main-font-family);
+    font-size: 25px;
+    font-weight: 100;
+}
+
+/*Affects the hover state of the title in the navbar Academy Cinemas*/
+.navbar-brand:hover{
+    color: var(--link-text-color-hover)
+}
+
+/*Affects the Now Playing, Tickets, and Contact anchor tags*/
+.nav-link{
+    opacity: 1;
+    color: var(--third-color);
+    font-family: var(--main-font-family);
+    font-size: 25px;
+}
+
+/*Sets the color on the link that has been click on in other words the "active link"*/
+/*Add in the script using dev tools to find bootstraps set up for this*/
+.nav-link:focus, .nav-link:hover{
+    color: var(--link-text-color-hover)
+}
+
+/*Sets the hover color state when a user is hover their mouse over a link in the navbar*/ 
+.nav-link:hover{
+    color: var(--link-text-color-hover)
+}
+
+/*Targets the drop down menu that contains the links for each movie title*/ 
+.dropdown-menu{
+    border-radius: 0;
+    border: none;
+    box-shadow: 0px 0px 16px 2px rgb(0, 0, 0, 0.4);
+    margin-top: 50px;
+    background-color: var(--secondary-color);
+    padding: 0px; /*Overrides bootstraps padding on the top and bottom of the drop down menu*/
+}
+
+/*Sets up the styling for each movie link in the drop down menu*/ 
+.dropdown-item{
+    font-family: var(--secondary-font-family);
+    font-weight: 500;
+    font-size: 25px;
+    text-shadow: 1px 3px 3px rgb(0, 0, 0, 0.5);
+    color: var(--third-color);
+    padding-top: 15px;/*adds some space to the top of each link to center them*/ 
+    padding-bottom: 20px; /*adds some space to the bottom of each link to center them*/ 
+    border-bottom: 1px solid rgb(117, 77, 13);
+}
+
+/*Sets the background color when a user hovers their mouse over each movie link*/ 
+.dropdown-item:hover{
+    background-color: var(--main-color);
+    color: var(--third-color)
+}
+
+h1{
+    font-family: var(--main-font-family);
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px rgb(0, 0, 0);
+    text-align: center;
+    font-size: 100px;
+}
+
+h3{
+    font-family: var(--secondary-font-family);
+}
+
+img{
+    width: 300px;
+    height: auto;
+}
+
+/*Remove styling copyied from Bootstrap for image in navbar and create the below class to resize the image
+after the img selector sizing is created*/
+/*Specifically styles the navbar image separate from the other images on site and overides
+the img type selectory styling*/
+.navbar-img{
+    width: auto;
+    height: 130px;
+}
+
+/*MOVIE CARDS*/
+
+.card{
+    border-radius: 0;
+    border: 3px solid var(--secondary-color);
+    background-color: transparent;
+    background-color: var(--third-color);
+}
+
+.card-body{
+    background-color: var(--third-color);
+}
+
+.col-lg-3{
+    padding-top: 150px;
+    margin:50px;
+}
+
+/*Creates the main styling for buttons that contain the Bootstrap .btn class*/
+.btn{
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    color: var(--third-color);
+    font-family: var(--secondary-font-family);
+    text-align: center;
+}
+
+.btn:focus {
+    box-shadow: none; /*Overrides bootstrap code when a button with the btn class is clicked*/
+  }
+
+/*TICKETS CARD*/
+
+h5{
+    font-size: 40px;
+    font-family: var(--secondary-font-family);
+}
+
+/*Specifially styles the the card class with the div contianing the tickets id name*/
+#tickets .card{
+    padding: 50px;
+}
+
+input[type="number"]{
+    padding: 5px;
+    margin: 10px;
+    border: 3px solid var(--secondary-color);
+    border-radius: 5px;
+    transition: 3s ease;
+}
+
+input[type="number"]:focus{
+    box-sizing: border-box;
+    outline: 0;
+    border: 3px solid var(--main-color);
+}
+
+/*CONTAINERS*/
+
+.container-padding{
+    padding-top: 150px;
+}
+
+
+/*CONTACT FORM*/
+
+.form-control{
+    border: 3px solid var(--secondary-color);
+    transition: 1s ease;
+}
+
+.form-control:focus {
+    color: #212529;
+    border-color: var(--main-color);
+    box-shadow: 0 0 10px 10px rgba(255, 195, 99, 0.4); /*Overrides bootstraps box shadow*/
+  }
+
+/*Contact form button*/
+button[type="submit"]{
+    padding: 20px;
+    border-radius: 40px;
+    float: right;
+    font-size: 25px;
+    font-weight: 600;
+    width: 150px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/*FOOTER*/
+
+footer{
+    border-top: 5px solid var(--secondary-color);
+}
+
+.footer-text{
+    font-family: var(--main-font-family);
+    color: var(--third-color);
+    font-size: 20px;
+}
+
+/*Styles the link text deeply nested with in the footer for a hover effect*/
+/*NOTE TO SELF: I did this becuase the text academy cinemas (also has the footer-text class)
+ would also trigger a hover effect and change to yellow and I didn't want the student the think 
+ it was a link*/
+div > footer > ul > .nav-item .footer-text:hover{
+    color: var(--secondary-color)
+}
+
+div > footer > ul > .nav-item .footer-text:focus{
+    color: var(--third-color)
+}
