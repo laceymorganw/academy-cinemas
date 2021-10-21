@@ -22,11 +22,11 @@
     with out the javascript cdn link-->
     <!--DEFINE DATA-* and ARIA-* ATTRIBUTES-->
     <!--https://getbootstrap.com/docs/5.1/helpers/position/#sticky-top-->
+    <!--Explain the why and how there are multiple css classes-->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <!--Explain the why and how there are multiple css classes-->
-                <img src="images/logo.png" class="d-inline-block align-top navbar-img" alt="academy cinemas logo">
+                Academy Cinemas
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +41,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="#ben-hur">Ben-Hur</a></li>
-                            <li><a class="dropdown-item" href="#stood-still">The Day the Earth Stood Still</a></li>
+                            <li><a class="dropdown-item" href="#stood-still">The Day the <br>Earth Stood Still</a></li>
                             <li><a class="dropdown-item" href="#vertigo">Vertigo</a></li>
                         </ul>
                     </li>
@@ -57,134 +57,147 @@
     </nav>
     <header class="row justify-content-center">
         <!--https://getbootstrap.com/docs/5.1/layout/columns/-->
-        <img src="images/logo.png" class="col-4 img-fluid">
+        <img src="images/logo.png" class="col-6 img-fluid" id="header-image">
         <!-- img-fluid class: https://getbootstrap.com/docs/5.1/content/images/-->
     </header>
+    <!--use bootstrap "gutters" (g-4) for margins and padding and is rem defined?-->
+    <!--https://getbootstrap.com/docs/5.1/examples/grid/#containers-->
+
+    <!--Change row-cols-* to INSERT new row and define class g-4-->
+    <!--https://getbootstrap.com/docs/5.1/layout/columns/-->
+
+
+    <!--NOTE: VS Code will display the col and row classes for you as you type them-->
+    <!--https://getbootstrap.com/docs/5.1/components/card/-->
 
     <!--MOVIES-->
     <section>
         <!--REMIND STUDENT OF GRID EXAMPLE AND PICK A GRID SIZE IN SCRIPT-->
-        <div class="container-fluid">
+        <!--NOTE: VS Code will display the col and row classes for you as you type them-->
+        <!--https://getbootstrap.com/docs/5.1/components/card/-->
+        <div class="container" id="movies">
             <h1>Now Playing</h1>
-            <!--use bootstrap "gutters" (g-4) for margins and padding and is rem defined?-->
-            <!--https://getbootstrap.com/docs/5.1/examples/grid/#containers-->
-            <div class="row row-cols-1 row-cols-md-2 justify-content-center">
-                <!--Change row-cols-* to INSERT new row and define class g-4-->
-                <!--https://getbootstrap.com/docs/5.1/layout/columns/-->
-                <!--BEN-HUR-->
-                <div class="col-lg-3 g-4" id="ben-hur">
-                    <!--NOTE: VS Code will display the col and row classes for you as you type them-->
-                    <!--https://getbootstrap.com/docs/5.1/components/card/-->
-                    <div class="card">
-                        <img src="images/ben-hur.jpg" class="card-img-top" alt="Ben-Hur movie poster">
-                        <div class="card-body">
-                            <h3 class="card-title">Ben-Hur</h3>
-                            <!--Change from h5 in to h3 from bootstrap code-->
-                            <p class="lead card-text">
-                                <!--Add lead class-->
-                                After a Jewish prince is betrayed and sent into slavery by a Roman friend in 1st-century
-                                Jerusalem, he regains his freedom and comes back for revenge.
-                                <br>
-                                <br>
-                                <b>Director: William Wyler</b>
-                                <br>
-                                Starring: Charlton Heston | Jack Hawkins | Stephen Boyd
-                            </p>
-                            </br>
-                            <h4 class="card-title">Show Times</h4>
-                            <div class="row">
-                                <div class="col">
-                                    <!--https://getbootstrap.com/docs/5.1/components/buttons/-->
-                                    <a class="btn" href="#tickets" role="button">10:00 AM</a>
-                                    <!--Later when we add javascript we make the tickets section show
-                                    what time was selected for which movie-->
-                                    <a class="btn" href="#tickets" role="button">11:30 AM</a>
-                                    <a class="btn" href="#tickets" role="button">1:10 PM</a>
-                                </div>
+            <!--BEN-HUR-->
+            <div class="row justify-content-center stood-still movie-card" id="ben-hur">
+                <div class="col-md-4">
+                    <img src="images/ben-hur.jpg" class="img-fluid" alt="Ben-Hur movie poster">
+                </div>
+                <div class="card col-md-6" id="ben-hur">
+                    <div class="card-body mb-xl-auto">
+                        <h3 class="card-title">Ben-Hur</h3>
+                        <p class="lead card-text">
+                            <!--Add lead class-->
+                            After a Jewish prince is betrayed and sent into slavery by a Roman friend in
+                            1st-century
+                            Jerusalem, he regains his freedom and comes back for revenge.
+                            <br>
+                            <br>
+                            <b>Director:</b> William Wyler
+                            <br>
+                            <b>Starring:</b> Charlton Heston | Jack Hawkins | Stephen Boyd
+                        </p>
+                        </br>
+                        <h4 class="card-title">Show Times</h4>
+                        <div class="row">
+                            <div class="col">
+                                <!--https://getbootstrap.com/docs/5.1/components/buttons/-->
+                                <a class="btn" href="#tickets" role="button">10:00 AM</a>
+                                <!--Later when we add javascript we make the tickets section show
+                                        what time was selected for which movie-->
+                                <a class="btn" href="#tickets" role="button">11:30 AM</a>
+                                <a class="btn" href="#tickets" role="button">1:10 PM</a>
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                    <!--https://getbootstrap.com/docs/5.1/components/buttons/-->
-                                    <a class="btn" href="#tickets" role="button">2:30 AM</a>
-                                    <a class="btn" href="#tickets" role="button">4:50 AM</a>
-                                    <a class="btn" href="#tickets" role="button">8:00 PM</a>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <!--https://getbootstrap.com/docs/5.1/components/buttons/-->
+                                <a class="btn" href="#tickets" role="button">2:30 AM</a>
+                                <a class="btn" href="#tickets" role="button">4:50 AM</a>
+                                <a class="btn" href="#tickets" role="button">8:00 PM</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--THE DAY THE EARTH STOOD STILL-->
-                <div class="col-lg-3 g-4" id="stood-still">
-                    <div class="card">
-                        <img src="images/earth-stood-still.jpg" class="card-img-top"
-                            alt="The day the earth stood still movie poster">
-                        <div class="card-body">
-                            <h3 class="card-title">The Day the Earth Stood Still</h3>
-                            <p class="lead card-text">
-                                <!--Add lead class-->
-                                An alien lands in Washington, D.C. and tells the people of Earth that they must live
-                                peacefully or be destroyed as a danger to other planets.
-                                <br>
-                                <br>
-                                Director: Robert Wise
-                                <br>
-                                Starring: Michael Rennie | Patricia Neal | Hugh Marlowe
-                            </p>
+            </div>
+            <!--THE DAY THE EARTH STOOD SILL-->
+            <div class="row justify-content-center movie-card" id="stood-still">
+                <div class="card col-md-6">
+                    <div class="card-body mb-xl-auto">
+                        <h3 class="card-title">The Day the Earth Stood Still</h3>
+                        <p class="lead card-text">
+                            <!--Add lead class-->
+                            An alien lands in Washington, D.C. and tells the people of Earth that they must live
+                            peacefully or be destroyed as a danger to other planets.
                             <br>
-                            <h4 class="card-title">Show Times</h4>
-                            <div class="row">
-                                <div class="col">
-                                    <!--https://getbootstrap.com/docs/5.1/components/buttons/-->
-                                    <a class="btn" href="#tickets" role="button">10:00 AM</a>
-                                    <a class="btn" href="#tickets" role="button">11:30 AM</a>
-                                    <a class="btn" href="#tickets" role="button">1:10 PM</a>
-                                </div>
+                            <br>
+                            <b>Director:</b> Robert Wise
+                            <br>
+                            <b>Starring:</b> Michael Rennie | Patricia Neal | Hugh Marlowe
+                        </p>
+                        </br>
+                        <h4 class="card-title">Show Times</h4>
+                        <div class="row">
+                            <div class="col">
+                                <!--https://getbootstrap.com/docs/5.1/components/buttons/-->
+                                <a class="btn" href="#tickets" role="button">10:00 AM</a>
+                                <!--Later when we add javascript we make the tickets section show
+                                        what time was selected for which movie-->
+                                <a class="btn" href="#tickets" role="button">11:30 AM</a>
+                                <a class="btn" href="#tickets" role="button">1:10 PM</a>
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                    <!--https://getbootstrap.com/docs/5.1/components/buttons/-->
-                                    <a class="btn" href="#tickets" role="button">2:30 AM</a>
-                                    <a class="btn" href="#tickets" role="button">4:50 AM</a>
-                                    <a class="btn" href="#tickets" role="button">8:00 PM</a>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <!--https://getbootstrap.com/docs/5.1/components/buttons/-->
+                                <a class="btn" href="#tickets" role="button">2:30 AM</a>
+                                <a class="btn" href="#tickets" role="button">4:50 AM</a>
+                                <a class="btn" href="#tickets" role="button">8:00 PM</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--VERTIGO-->
-                <div class="col-lg-3 g-4" id="vertigo">
-                    <div class="card">
-                        <img src="images/vertigo.jpg" class="card-img-top" alt="Vertigo movie poster">
-                        <div class="card-body">
-                            <h3 class="card-title">Vertigo</h3>
-                            <p class="lead card-text">
-                                <!--Add lead class-->
-                                A former San Francisco police detective juggles wrestling with his personal demons and
-                                becoming obsessed with the hauntingly beautiful woman he has been hired to trail, who
-                                may be deeply disturbed.
-                                <br>
-                                <br>
-                                Director: Alfred Hitchcock
-                                <br>
-                                Starring: James Stewart | Kim Novak | Barbara Bel Geddes
-                            </p>
+                <div class="col-md-4">
+                    <img src="images/earth-stood-still.jpg" class="img-fluid"
+                        alt="The day the earth stood still movie poster">
+                </div>
+            </div>
+            <!--VERTIGO-->
+            <div class="row justify-content-center movie-card" id="vertigo">
+                <div class="col-md-4">
+                    <img src="images/vertigo.jpg" class="img-fluid" alt="Vertigo movie poster">
+                </div>
+                <div class="card col-md-6">
+                    <div class="card-body mb-xl-auto">
+                        <h3 class="card-title">Vertigo</h3>
+                        <p class="lead card-text">
+                            <!--Add lead class-->
+                            A former San Francisco police detective juggles wrestling with his personal demons and
+                            becoming obsessed with the hauntingly beautiful woman he has been hired to trail, who
+                            may be deeply disturbed.
                             <br>
-                            <h4 class="card-title">Show Times</h4>
-                            <div class="row">
-                                <div class="col">
-                                    <!--https://getbootstrap.com/docs/5.1/components/buttons/-->
-                                    <a class="btn" href="#tickets" role="button">10:00 AM</a>
-                                    <a class="btn" href="#tickets" role="button">11:30 AM</a>
-                                    <a class="btn" href="#tickets" role="button">1:10 PM</a>
-                                </div>
+                            <br>
+                            <b>Director:</b> Alfred Hitchcock
+                            <br>
+                            <b>Starring:</b> James Stewart | Kim Novak | Barbara Bel Geddes
+                        </p>
+                        </br>
+                        <h4 class="card-title">Show Times</h4>
+                        <div class="row">
+                            <div class="col">
+                                <!--https://getbootstrap.com/docs/5.1/components/buttons/-->
+                                <a class="btn" href="#tickets" role="button">10:00 AM</a>
+                                <!--Later when we add javascript we make the tickets section show
+                                        what time was selected for which movie-->
+                                <a class="btn" href="#tickets" role="button">11:30 AM</a>
+                                <a class="btn" href="#tickets" role="button">1:10 PM</a>
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                    <!--https://getbootstrap.com/docs/5.1/components/buttons/-->
-                                    <a class="btn" href="#tickets" role="button">2:30 AM</a>
-                                    <a class="btn" href="#tickets" role="button">4:50 AM</a>
-                                    <a class="btn" href="#tickets" role="button">8:00 PM</a>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <!--https://getbootstrap.com/docs/5.1/components/buttons/-->
+                                <a class="btn" href="#tickets" role="button">2:30 AM</a>
+                                <a class="btn" href="#tickets" role="button">4:50 AM</a>
+                                <a class="btn" href="#tickets" role="button">8:00 PM</a>
                             </div>
                         </div>
                     </div>
@@ -192,6 +205,7 @@
             </div>
         </div>
     </section>
+
     <!--Link to buy tickets scroll down to tickets-->
     <!--TICKETS-->
     <!--Later on javascript add function to get the movie title when when movie time is selected 
@@ -200,13 +214,53 @@
         <div class="container container-padding" id="tickets">
             <h1>Tickets</h1>
             <div class="row justify-content-center">
-                <div class="card text-center">
-                    <h5 class="card-title">Please select number of tickets</h5>
-                    <div class="card-body">
-                        <input type="number" id="quantity" value="1" step="1">
-                        <br>
-                        <input type="submit" class="btn" value="Buy Tickets">
+                <!--MOVIE SELECTION-->
+                <div class="col-4 justify-content-evenly">
+                    <div class="card text-center">
+                        <h5 class="card-title">Please select a movie</h5>
+                        <div class="card-body">
+                            <select class="form-select"><!--I can not style the drop down spacing, 
+                            the styling is browser specific and even when I tried to use vendor prefixes
+                        do you know how to adjust the padding? It seems like the solution to this is to use
+                    jQuery or JavaScript-->
+                                <option selected>Select Movie</option>
+                                <option value="1">Ben-Hur</option>
+                                <option value="2">The Day the Earth Stood Still</option>
+                                <option value="3">Vertigo</option>
+                            </select>
+                        </div>
                     </div>
+                </div>
+                <!--TIME SELCTION-->
+                <div class="col-4">
+                    <div class="card text-center">
+                        <h5 class="card-title">Please select move time</h5>
+                        <div class="card-body">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Select Time</option>
+                                <option value="1">10:00 AM</option>
+                                <option value="2">11:30 AM</option>
+                                <option value="3">1:10 PM</option>
+                                <option value="4">2:30 PM</option>
+                                <option value="5">4:50 PM</option>
+                                <option value="6">8:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!--NUMBER OF TICKETS-->
+                <div class="col-4">
+                    <div class="card text-center">
+                        <h5 class="card-title">Please select number of tickets</h5>
+                        <div class="card-body">
+                            <input type="number" id="quantity" value="1" step="1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-conent-center">
+                <div class="col-7">
+                    <input type="submit" class="btn" value="Buy Tickets">
                 </div>
             </div>
         </div>
@@ -214,22 +268,19 @@
 
     <!--CONTACT FORM-->
     <section>
-        <div class="container container-padding" id="contact">
+        <div class="container" id="contact">
             <h1>Contact Us!</h1>
-            <div class="row align-items-center g-3">
+            <div class="row justify-content-center g-3">
                 <div class="col">
                     <input type="text" class="form-control" placeholder="First name" aria-label="First name">
                 </div>
                 <div class="col">
-
                     <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
                 </div>
                 <div class="mb-3">
-
                     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
                 </div>
                 <div class="mb-3">
-
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                         placeholder="Type your message here..."></textarea>
                     <button type="submit" class="btn">Submit</button>
@@ -241,16 +292,17 @@
     <!--DOWNLOAD FOOTER EXAMPLE FILES AND COPY AND PASTE FIRST ONE HERE-->
     <!--FOOTER-->
     <div class="container-fluid">
-        <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 my-4"><!--Remove Boostrap border-top class-->
-          <p class="col-md-3 mb-0 footer-text">Academy Cinemas &copy;</p>
-          <img src="images/logo.png" class="align-items-center navbar-img" alt="academy cinemas logo">
-          <ul class="nav col-md-3 justify-content-sm-end">
-            <li class="nav-item"><a href="#ben-hur" class="nav-link px-2 footer-text">Now Playing</a></li>
-            <li class="nav-item"><a href="#tickets" class="nav-link px-2 footer-text">Tickets</a></li>
-            <li class="nav-item"><a href="#contact" class="nav-link px-2 footer-text">Contact</a></li>
-          </ul>
+        <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 my-4">
+            <!--Remove Boostrap border-top class-->
+            <p class="col-md-3 mb-0 footer-text">Academy Cinemas &copy;</p>
+            <img src="images/logo.png" class="align-items-center footer-img" alt="academy cinemas logo">
+            <ul class="nav col-md-3 justify-content-sm-end">
+                <li class="nav-item"><a href="#ben-hur" class="nav-link px-2 footer-text">Now Playing</a></li>
+                <li class="nav-item"><a href="#tickets" class="nav-link px-2 footer-text">Tickets</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link px-2 footer-text">Contact</a></li>
+            </ul>
         </footer>
-      </div>
+    </div>
 </body>
 
 </html>
