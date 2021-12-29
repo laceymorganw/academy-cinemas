@@ -2,10 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Passion+One&display=swap");
 
 /*Creates global CSS variables that can be reused through out the file*/
+
 :root {
-    --main-color: #ffc127;
-    --main-color-transparent: #ffc227c0;
-    --secondary-color: rgb(128, 0, 0);
+    --main-color: rgb(126, 133, 130);
+    --main-color-accent: rgb(237, 192, 3);
+    --main-color-transparent: rgba(126, 133, 130, 0.8);
+    --secondary-color: rgb(128, 0, 0, 0.9);
     --accent-color: rgb(36, 36, 36);
     --background-color: rgb(255, 255, 255);
     --body-text-color: rgb(44, 44, 44);
@@ -19,33 +21,44 @@ body {
 }
 
 .body-background {
-    background-image: url("../images/theatre-curtains.jpg"); /*Tells the browser to back out
+    background-image: url("../images/theatre-curtains.jpg");
+    /*Tells the browser to back out
     of the css folder and then go into the images folder by using the double dot relative file path*/
     background-repeat: repeat;
     background-attachment: fixed;
     background-size: 100%;
 }
 
+
 /*NAVBAR*/
+
 .navbar {
-    /* background: var(--main-color-transparent);*/
+    /* background: var(--main-color-transparent); */
+    /*Should this line be deleted?*/
     background-color: var(--secondary-color);
-    border-bottom: 5px solid var(--main-color);
+    border-bottom: 5px solid rgb(98, 0, 0);
     height: 100px;
 }
 
+
 /*Affects the title in the navbar Academy Cinemas*/
+
 .navbar-brand {
-    color: var(--main-color);
+    color: var(--main-color-accent);
     font-family: var(--main-font-family);
     font-size: 45px;
     padding-left: 30px;
 }
 
+.navbar-brand:hover
+/*Affects the hover state of the title in the navbar Academy Cinemas*/
 
-.navbar-brand:hover/*Affects the hover state of the title in the navbar Academy Cinemas*/
-, .nav-link:hover/*Affects the hover state of the link in the navbar*/{
-    color: var(--accent-text-color);
+,
+.nav-link:hover
+/*Affects the hover state of the link in the navbar*/
+
+{
+    color: var(--main-color-transparent);
     text-shadow: 0 0 3px rgba(255, 123, 0, 0.6);
 }
 
@@ -53,58 +66,73 @@ body {
     padding-left: 15px;
 }
 
+
 /*Affects the Now Playing, Tickets, and Contact anchor tags*/
+
 .nav-link {
     opacity: 1;
-    color: var(--main-color);
+    color: var(--main-color-accent);
     font-family: var(--main-font-family);
     font-size: 35px;
 }
 
+
 /*Sets the color on the link that has been click on in other words the "active link"
 It really only works when you are hovering the drop down list for now playing to override Bootstraps
 blue*/
+
+
 /*Add in the script using dev tools to find bootstraps set up for this and then finding it 
 in the bootstrap css file*/
+
 .nav-link:focus {
     color: var(--accent-text-color);
     text-shadow: 0 0 3px rgba(255, 123, 0, 0.6);
 }
 
+
 /*Targets the drop down menu that contains the links for each movie title*/
+
 .dropdown-menu {
     border-radius: 0;
     border: none;
     box-shadow: 0px 0px 16px 2px rgb(0, 0, 0, 0.4);
     /*margin-top: 50px;*/
     background-color: var(--main-color);
-    padding: 0px; /*Overrides bootstraps padding on the top and bottom of the drop down menu*/
+    padding: 0px;
+    /*Overrides bootstraps padding on the top and bottom of the drop down menu*/
 }
 
+
 /*Sets up the styling for each movie link in the drop down menu*/
+
 .dropdown-item {
     font-family: var(--main-font-family);
     text-align: center;
     font-size: 30px;
     color: var(--accent-color);
-    padding-top: 15px; /*adds some space to the top of each link to center them*/
-    padding-bottom: 20px; /*adds some space to the bottom of each link to center them*/
+    padding-top: 15px;
+    /*adds some space to the top of each link to center them*/
+    padding-bottom: 20px;
+    /*adds some space to the bottom of each link to center them*/
     border-bottom: 2px solid rgb(117, 77, 13);
 }
 
+
 /*Sets the background color when a user hovers their mouse over each movie link*/
+
 .dropdown-item:hover {
     color: var(--accent-text-color);
     background-color: var(--main-color);
 }
 
 #header-image {
-    padding-top: 70px;
+    padding-top: 150px;
 }
 
 h1 {
     font-family: var(--main-font-family);
-    color: var(--main-color);
+    color: var(--main-color-accent);
     text-shadow: 0 0 10px rgb(0, 0, 0);
     text-align: center;
     font-size: 100px;
@@ -125,6 +153,7 @@ h5 {
     font-family: var(--main-font-family);
 }
 
+
 /*MOVIE CARDS*/
 
 .container {
@@ -136,47 +165,51 @@ h5 {
     border: 5px solid var(--main-color);
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.9);
-    margin-left: 40px; /*nth child this*/
+    margin-left: 40px;
+    /*nth child this*/
 }
 
-b{
+b {
     font-weight: 600;
-}
-
-div > #stood-still > .card {
-    margin-right: 40px;
 }
 
 .movie-card {
     padding-top: 130px;
 }
 
+
 /*NOTE TO SELF: add movie id after adding the padding to show how padding effects all classes with 
 card-body but we just want the the cards with movie text*/
+
 #movies .card-body {
     padding-top: 40px;
     padding-left: 20px;
 }
 
+
 /*Centers movie poster next to description*/
+
 #stood-still img {
-    padding-top: 35px;
+    margin-left: 25px;
 }
 
-#vertigo img {
-    padding-top: 5px;
+#stood-still .card {
+    margin-left: -10px;
 }
 
 p {
-    cursor: default; /*Changes the cursor back to the default arrow instead of a text cursor when 
+    cursor: default;
+    /*Changes the cursor back to the default arrow instead of a text cursor when 
     hovering your mouse over text*/
 }
 
-.container #movies{
-    padding-top: 100px;
+#movies {
+    padding-top: 150px;
 }
 
+
 /*Creates the main styling for buttons that contain the Bootstrap .btn class*/
+
 .btn {
     background-color: var(--main-color);
     border-radius: 20px;
@@ -187,17 +220,27 @@ p {
     font-family: var(--main-font-family);
     font-size: 18px;
 }
+
 .btn:hover {
     color: var(--accent-text-color);
 }
 
 .btn:focus {
-    box-shadow: none; /*Overrides bootstrap code when a button with the btn class is clicked*/
+    box-shadow: none;
+    /*Overrides bootstrap code when a button with the btn class is clicked*/
 }
+
+.yellow-btn {
+    /*Added styling for yellow buttons for tickets and contact form section*/
+    background-color: var(--main-color-accent);
+}
+
 
 /*TICKETS CARD*/
 
+
 /*Specifially styles the the card class with the div contianing the tickets id name*/
+
 #tickets .card {
     padding: 40px;
     height: 250px;
@@ -205,7 +248,9 @@ p {
     background-color: white;
 }
 
+
 /*Select movie and times styling*/
+
 .form-select {
     display: block;
     width: 100%;
@@ -221,11 +266,14 @@ p {
 .form-select:focus {
     border-color: var(--secondary-color);
     outline: none;
-    box-shadow: none; /*Overrides bootstraps box shadow*/
+    box-shadow: none;
+    /*Overrides bootstraps box shadow*/
     transition: 0.5s ease;
 }
 
+
 /*Select tickets input*/
+
 input[type="number"] {
     width: 70px;
     padding: 5px;
@@ -251,11 +299,13 @@ input[type="submit"] {
     float: right;
 }
 
+
 /*CONTAINERS*/
 
 .container-padding {
     padding-top: 150px;
 }
+
 
 /*CONTACT FORM*/
 
@@ -267,10 +317,13 @@ input[type="submit"] {
 .form-control:focus {
     color: #212529;
     border-color: var(--secondary-color);
-    box-shadow: 0 0 0px .25rem var(--main-color); /*Overrides bootstraps box shadow*/
+    box-shadow: 0 0 0px .25rem var(--main-color);
+    /*Overrides bootstraps box shadow*/
 }
 
+
 /*Contact form button*/
+
 button[type="submit"] {
     float: right;
     padding: 20px;
@@ -281,10 +334,13 @@ button[type="submit"] {
     margin-bottom: 40px;
 }
 
+
 /*FOOTER*/
 
 footer {
     border-top: 5px solid var(--main-color);
+    background-color: rgb(0, 0, 0, 0.6);
+    margin: 0 -15px 0 -15px;
 }
 
 .footer-text {
@@ -293,21 +349,34 @@ footer {
     font-size: 30px;
 }
 
+
 /*Specifically styles the footer image separate from the other images on site and overides
 the img type selectory styling*/
+
 .footer-img {
     width: auto;
     height: 130px;
 }
 
+
 /*Styles the link text deeply nested with in the footer for a hover effect*/
+
+
 /*NOTE TO SELF: I did this becuase the text academy cinemas (also has the footer-text class)
  would also trigger a hover effect and change to yellow and I didn't want the student the think 
  it was a link*/
-div > footer > ul > .nav-item .footer-text:hover {
+
+div>footer>ul>.nav-item .footer-text:hover {
     color: var(--main-color);
 }
 
-div > footer > ul > .nav-item .footer-text:focus {
+div>footer>ul>.nav-item .footer-text:focus {
     color: var(--accent-text-color);
+}
+
+
+/* added this but it should be placed where it makes sense */
+
+img {
+    border-radius: 5px;
 }
