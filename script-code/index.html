@@ -12,6 +12,8 @@
 
     <!--Custom CSS to overwrite Bootstrap CSS based on levels of specificity-->
     <link href="css/custom.css" rel="stylesheet">
+    <link href="css/custom-css-media.css" rel="stylesheet"> <!--ADDED - We can combine this into the custom.css file or keep it separate but 
+    I think it might help the student understand how to organize attaching multiple css files to an HTML document --> <!--!!!-->
 
     <title>Academy Cinemas</title>
 </head>
@@ -25,7 +27,8 @@
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Academy Cinemas</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            <!--ADD NAVBAR-DARK HERE: With all the other custom coding we added to the navbar the mobile button disapears--><!--!!!-->
+            <button class="navbar-dark navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -54,18 +57,20 @@
     </nav>
     <!--LOGO-->
     <header class="row justify-content-center">
-        <img src="images/logo.png" class="img-fluid col-6" id="header-image" alt="Academy Cinemas logo">
+        <!--ADDED col-lg-6 for breakpoint-->
+        <img src="images/logo.png" class="img-fluid col-lg-6" id="header-image" alt="Academy Cinemas logo">
     </header>
     <!--NOW PLAYING-->
     <section>
         <div class="container" id="now-playing">
             <h1>Now Playing</h1>
             <!--BEN HUR-->
-            <div class="row justify-content-center movie-row" id="ben-hur">
-                <div class="col-5">
+            <!--Changed the row class to flex-row d-flex flex-wrap APPLIED TO ALL MOVIES BELOW--><!--!!!-->
+            <div class="flex-row d-flex flex-wrap movie-row" id="ben-hur"> <!--Removed justify-content-center APPLIED TO ALL MOVIES BELOW-->
+                <div class="col-lg-5 mx-auto"> <!--Changed from col-5 to col-lg-5 and added mx-auto APPLIED TO ALL MOVIES BELOW--><!--!!!-->
                     <img src="images/ben-hur.jpg" class="img-fluid" alt="Ben-Hur movie poster">
                 </div>
-                <div class="card col-5">
+                <div class="card col-lg-5 mx-auto"> <!--Changed from col-5 to col-lg-5 and added mx-auto APPLIED TO ALL MOVIES BELOW--><!--!!!-->
                     <div class="card-body">
                         <h3 class="card-title">Ben Hur</h3>
                         <!--BEN HUR MOVIE DESCRIPTION-->
@@ -99,8 +104,9 @@
                 </div>
             </div>
             <!--THE DAY THE EARTH STOOD STILL-->
-            <div class="row justify-content-center movie-row" id="stood-still">
-                <div class="card col-5">
+            <!--Add flex-wrap-reverse for mobile layout--> <!--!!!-->
+            <div class="flex-row d-flex flex-wrap-reverse movie-row" id="stood-still">
+                <div class="card col-lg-5 mx-auto"><!--!!!-->
                     <div class="card-body">
                         <h3 class="card-title">The Day the Earth Stood Still</h3>
                         <!--THE DAY THE EARTH STOOD STILL MOVIE DESCRIPTION-->
@@ -132,17 +138,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-5">
+                <div class="col-lg-5 mx-auto"><!--!!!-->
                     <img src="images/earth-stood-still.jpg" class="img-fluid"
                         alt="The Day the Earth Stood Still movie poster">
                 </div>
             </div>
             <!--VERITGO-->
-            <div class="row justify-content-center movie-row" id="vertigo">
-                <div class="col-5">
+            <div class="flex-row d-flex flex-wrap movie-row" id="vertigo"><!--!!!-->
+                <div class="col-lg-5 mx-auto"><!--!!!-->
                     <img src="images/vertigo.jpg" class="img-fluid" alt="Vertigo movie poster">
                 </div>
-                <div class="card col-5">
+                <div class="card col-lg-5 mx-auto"><!--!!!-->
                     <div class="card-body">
                         <h3 class="card-title">Vertigo</h3>
                         <!--VERTIGO MOVIE DESCRIPTION-->
@@ -183,11 +189,13 @@
     <section>
         <div class="container" id="tickets">
             <h1>Tickets</h1>
-            <div class="row justify-content-center">
+            <!--Removed justify-content-center added flex-row d-flex flex-wrap --><!--!!!-->
+            <div class="flex-row d-flex flex-wrap">
                 <!--MOVIE SELECTION-->
-                <div class="col-4">
+                <!--Changed col-4 to col and added mb-3 and me-4 --><!--!!!-->
+                <div class="col mb-3 me-4">
                     <div class="card text-center">
-                        <h5>Please select a movie</h5>
+                        <h5>Please select a movie title</h5>
                         <div class="card-body">
                             <select class="form-select" aria-label="Movie title selection">
                                 <option selected>Select movie</option>
@@ -199,7 +207,7 @@
                     </div>
                 </div>
                 <!--TIME SELECTION-->
-                <div class="col-4">
+                <div class="col mb-3 me-4">
                     <div class="card text-center">
                         <h5>Please select a show time</h5>
                         <div class="card-body">
@@ -216,7 +224,7 @@
                     </div>
                 </div>
                 <!--NUMBER OF TICKETS-->
-                <div class="col-4">
+                <div class="col mb-3 me-4">
                     <div class="card text-center">
                         <h5>Please select number of tickets</h5>
                         <div class="card-body">
@@ -249,7 +257,7 @@
                 </div>
                 <div>
                     <textarea class="form-control" rows="3" placeholder="Type your message here..."></textarea>
-                    <button type="submit" class="btn yellow-btn">Submit</button>
+                    <button type="submit" class="btn yellow-btn" id="contact-submit">Submit</button>
                 </div>
             </div>
         </div>
@@ -257,10 +265,9 @@
     <!--FOOTER-->
     <div class="container-fluid">
         <footer class="d-flex flex-wrap justify-content-center align-items-center py-3">
-            <p class="col-md-4 mb-0 footer-text">&copy; Academy Cinemas</p>
-
+            <!--REMOVED mb-0 --><!--!!!-->
+            <p class="col-md-4 footer-text">&copy; Academy Cinemas</p>
             <img src="images/logo.png" class="col-md-4 footer-img" alt="Academy Cinemas logo">
-
             <ul class="nav col-md-4 justify-content-end">
                 <li class="nav-item"><a href="#now-playing" class="nav-link px-2 footer-text">Now Playing</a></li>
                 <li class="nav-item"><a href="#tickets" class="nav-link px-2 footer-text">Tickets</a></li>
