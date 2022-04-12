@@ -19,8 +19,10 @@
 into the images folder by using the double dot relative file path*/
 body {
     background-image: url(../images/theater-curtains.jpg);
-    background-size: 100%;
+    background-size: 100% 120%; /*100% horizontally and 120% vertically*/ /*!!!*/
     background-attachment: fixed;
+    background-repeat: no-repeat; /*Keeps the background from repeating or tiled effect*/ /*!!!*/
+    overflow-x: hidden; /*removes left to right scroll bar*/ /*!!!*/
 }
 
 /*NAVBAR*/
@@ -58,7 +60,7 @@ body {
     text-shadow: 0 0 3px rgba(255, 123, 0, 0.6);
 }
 
-​​/*Adjust the left padding of the navbar links*/
+/*Adjust the left padding of the navbar links*/
 
 .navbar-expand-lg .navbar-nav .nav-link {
     padding-left: 1.5rem;
@@ -95,7 +97,7 @@ body {
 
 /*HEADER IMAGE*/
 #header-image {
-    padding-top: 150px;
+    margin-top: 130px;
 }
 
 /*GENERAL STYLING*/
@@ -128,7 +130,7 @@ h4 {
 }
 
 h5 {
-    font-size: 30px;
+    font-size: 25px;/*Changed from 30px to 25px*/ /*!!!*/
     font-family: var(--main-font-family);
 }
 
@@ -153,21 +155,25 @@ img {
 }
 
 .card-body {
-    padding-top: 40px;
+    padding-top: 30px; /*Changed from 40px to 30px*/ /*!!!*/
     padding-left: 20px;
 }
 
 .movie-row {
-    padding-top: 130px;
+    padding-top: 50px; /*Changed from 130px to 50px, it was making the padding between Now Playing
+    and the first movie Ben Hur have way too much space between */ /*!!!*/
 }
 
+/*!!!*/
+/* THIS SHOULD BE REMOVED FROM THE SCRIPT - replaced with mx-auto
 #stood-still img {
     margin-left: 35px;
 }
-
+THIS SHOULD BE REMOVED FROM THE SCRIPT - replaced with mx-auto
 #stood-still .card {
     margin-left: -15px;
-}
+}*/
+/*!!!*/
 
 /*MOVIE CARDS SHOW TIME BUTTONS*/
 
@@ -181,7 +187,8 @@ img {
     color: var(--accent-color);
     font-family: var(--main-font-family);
     font-size: 18px;
-    float: right;
+    /*float: right; THIS IS NOW IN A SEPERATE ID FOR THE SUBMIT BUTTON (#contact-submit) 
+    BY ADDING IT HERE IT WAS AFFECTING THE SHOW TIME BUTTONS AND I NOTICE IT UNTIL NOW*//*!!!*/
 }
 
 .btn:focus {
@@ -260,6 +267,11 @@ input[type="number"]:focus {
     color: #212529;
     border-color: var(--secondary-color);
     box-shadow: 0 0 0px 0.25rem var(--main-color);
+}
+
+/*Adjusts the contact form submit button to the right of the screen*/
+#contact-submit{
+    float: right;
 }
 
 /*FOOTER*/
