@@ -37,6 +37,10 @@
     .card-body #quantity {
         margin-top: -35px;
     }
+
+    .navbar-spacer {
+        padding-top: 350px;
+    }
 }
 @media (max-width: 990px) {
 
