@@ -29,8 +29,8 @@ body {
 
 .navbar {
     background-color: var(--secondary-color);
-    border-bottom: 5px solid rgb(98, 0, 0);/*Pretty sure I mention in the script that this color is used once but
-    I added it to the mobile menu button so remove that part from the script*/ 
+    border-bottom: 5px solid rgb(98, 0, 0); /*Pretty sure I mention in the script that this color is used once but
+    I added it to the mobile menu button so remove that part from the script*/
     height: 100px;
 }
 
@@ -67,13 +67,13 @@ body {
     padding-left: 1.5rem;
 }
 
-/*Mobile navbar icon*//*!!!*/
+/*Mobile navbar icon*/ /*!!!*/
 .navbar-toggler-icon {
     /*change rgba color in the below url from stroke='rgba%28255, 255, 255, 0.55%29'
      to stroke='rgb(237, 192, 3)'. Get this from the .navbar-dark navbar-toggler-icon ruleset in the bootstrap.css 
      file alone with the other two rulesets below.*/
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(237, 192, 3)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  }
+}
 .navbar-toggler {
     color: rgb(98, 0, 0);
     transition: 0.5s ease;
@@ -84,8 +84,13 @@ body {
     outline: 0;
     box-shadow: 0 0 0 0.25rem;
     transition: 0.5s ease;
-  }
-  /*!!!*/
+}
+
+.spacer {
+    padding-top: 250px;
+}
+
+/*!!!*/
 
 /*MOVIE DROP DOWN MENU*/
 
@@ -151,7 +156,7 @@ h4 {
 }
 
 h5 {
-    font-size: 25px;/*Changed from 30px to 25px*/ /*!!!*/
+    font-size: 25px; /*Changed from 30px to 25px*/ /*!!!*/
     font-family: var(--main-font-family);
 }
 
@@ -180,10 +185,11 @@ img {
     padding-left: 20px;
 }
 
+/*
+This needs to be removed now that there is .spacer this became redundant
 .movie-row {
-    padding-top: 50px; /*Changed from 130px to 50px, it was making the padding between Now Playing
-    and the first movie Ben Hur have way too much space between */ /*!!!*/
-}
+    padding-top: 50px; 
+}*/ /*!!!*/
 
 /*!!!*/
 /* THIS SHOULD BE REMOVED FROM THE SCRIPT - replaced with mx-auto
@@ -209,7 +215,7 @@ THIS SHOULD BE REMOVED FROM THE SCRIPT - replaced with mx-auto
     font-family: var(--main-font-family);
     font-size: 18px;
     /*float: right; THIS IS NOW IN A SEPERATE ID FOR THE SUBMIT BUTTON (#contact-submit) 
-    BY ADDING IT HERE IT WAS AFFECTING THE SHOW TIME BUTTONS AND I NOTICE IT UNTIL NOW*//*!!!*/
+    BY ADDING IT HERE IT WAS AFFECTING THE SHOW TIME BUTTONS AND I NOTICE IT UNTIL NOW*/ /*!!!*/
 }
 
 .btn:focus {
@@ -291,7 +297,7 @@ input[type="number"]:focus {
 }
 
 /*Adjusts the contact form submit button to the right of the screen*/
-#contact-submit{
+#contact-submit {
     float: right;
 }
 
