@@ -15,6 +15,10 @@
     --secondary-font-family: "Yesteryear", cursive;
 }
 
+html{
+    scroll-padding-top: 100px;
+}
+
 /*Tells the browser to back out of the css folder and then go 
 into the images folder by using the double dot relative file path*/
 body {
@@ -72,7 +76,7 @@ body {
     /*change rgba color in the below url from stroke='rgba%28255, 255, 255, 0.55%29'
      to stroke='rgb(237, 192, 3)'. Get this from the .navbar-dark navbar-toggler-icon ruleset in the bootstrap.css 
      file alone with the other two rulesets below.*/
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(237, 192, 3)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb%28237, 192, 3%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 .navbar-toggler {
     color: rgb(98, 0, 0);
@@ -87,7 +91,7 @@ body {
 }
 
 .spacer {
-    padding-top: 250px;
+    padding-top: 50px;
 }
 
 /*!!!*/
