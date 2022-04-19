@@ -24,6 +24,9 @@
 
 /*Scales elements to a certian size up to a max screen width of 1200px*/
 @media (max-width: 1200px) {
+    html{
+        scroll-padding-top: 300px;
+    }
     .container {
         padding: 20px 40px 50px 50px;
     }
@@ -38,9 +41,6 @@
         margin-top: -35px;
     }
 
-    .spacer {
-        padding-top: 350px;
-    }
 }
 @media (max-width: 990px) {
 
