@@ -15,18 +15,12 @@
     --secondary-font-family: "Yesteryear", cursive;
 }
 
-html{
-    scroll-padding-top: 100px;
-}
-
-/*Tells the browser to back out of the css folder and then go 
-into the images folder by using the double dot relative file path*/
 body {
-    background-image: url(../images/theater-curtains.jpg);
-    background-size: 100% 120%; /*100% horizontally and 120% vertically*/ /*!!!*/
+    background-image: url(../images/theater-curtains.jpg); /*Tells the browser to back out of the css folder and then go 
+    into the images folder by using the double dot relative file path*/
+    background-size: 100% 120%; /*100% horizontally and 120% vertically*/
     background-attachment: fixed;
-    background-repeat: no-repeat; /*Keeps the background from repeating or tiled effect*/ /*!!!*/
-    overflow-x: hidden; /*removes left to right scroll bar*/ /*!!!*/
+    overflow-x: hidden; /*removes left to right scroll bar*/
 }
 
 /*NAVBAR*/
@@ -59,42 +53,29 @@ body {
 }
 
 /*Sets the color on the link that has been click on in other words the "active link"*/
-
 .nav-link:focus {
     color: var(--accent-text-color);
     text-shadow: 0 0 3px rgba(255, 123, 0, 0.6);
 }
 
 /*Adjust the left padding of the navbar links*/
-
 .navbar-expand-lg .navbar-nav .nav-link {
     padding-left: 1.5rem;
 }
 
-/*Mobile navbar icon*/ /*!!!*/
+/*MOBILE MENU*/
 .navbar-toggler-icon {
-    /*change rgba color in the below url from stroke='rgba%28255, 255, 255, 0.55%29'
-     to stroke='rgb(237, 192, 3)'. Get this from the .navbar-dark navbar-toggler-icon ruleset in the bootstrap.css 
-     file alone with the other two rulesets below.*/
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb%28237, 192, 3%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
+
 .navbar-toggler {
-    color: rgb(98, 0, 0);
-    transition: 0.5s ease;
+    transition: box-shadow 0.5s ease;
 }
 
 .navbar-toggler:focus {
-    text-decoration: none;
-    outline: 0;
-    box-shadow: 0 0 0 0.25rem;
-    transition: 0.5s ease;
+    box-shadow: 0 0 0 0.25rem rgb(98, 0, 0);
+    transition: box-shadow 0.5s ease;
 }
-
-.spacer {
-    padding-top: 50px;
-}
-
-/*!!!*/
 
 /*MOVIE DROP DOWN MENU*/
 
@@ -126,8 +107,9 @@ body {
 }
 
 /*HEADER IMAGE*/
+
 #header-image {
-    margin-top: 130px;
+    padding-top: 150px;
 }
 
 /*GENERAL STYLING*/
@@ -137,8 +119,8 @@ h3,
 h4,
 h5,
 p {
-    cursor: default; /*Changes the cursor back to the default arrow instead of a 
-    text cursor when hovering your mouse over text*/
+    cursor: default; /*Changes the cursor back to the default arrow instead of a text cursor 
+    when hovering your mouse over text*/
 }
 
 h1 {
@@ -160,7 +142,7 @@ h4 {
 }
 
 h5 {
-    font-size: 25px; /*Changed from 30px to 25px*/ /*!!!*/
+    font-size: 30px;
     font-family: var(--main-font-family);
 }
 
@@ -181,7 +163,6 @@ img {
     border: 5px solid var(--main-color);
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.9);
-    margin-left: 40px;
 }
 
 .card-body {
@@ -189,22 +170,9 @@ img {
     padding-left: 20px;
 }
 
-/*
-This needs to be removed now that there is .spacer this became redundant
-.movie-row {
-    padding-top: 50px; 
-}*/ /*!!!*/
-
-/*!!!*/
-/* THIS SHOULD BE REMOVED FROM THE SCRIPT - replaced with mx-auto
-#stood-still img {
-    margin-left: 35px;
+.spacer {
+    padding-top: 50px;
 }
-THIS SHOULD BE REMOVED FROM THE SCRIPT - replaced with mx-auto
-#stood-still .card {
-    margin-left: -15px;
-}*/
-/*!!!*/
 
 /*MOVIE CARDS SHOW TIME BUTTONS*/
 
@@ -218,8 +186,6 @@ THIS SHOULD BE REMOVED FROM THE SCRIPT - replaced with mx-auto
     color: var(--accent-color);
     font-family: var(--main-font-family);
     font-size: 18px;
-    /*float: right; THIS IS NOW IN A SEPERATE ID FOR THE SUBMIT BUTTON (#contact-submit) 
-    BY ADDING IT HERE IT WAS AFFECTING THE SHOW TIME BUTTONS AND I NOTICE IT UNTIL NOW*/ /*!!!*/
 }
 
 .btn:focus {
@@ -228,19 +194,19 @@ THIS SHOULD BE REMOVED FROM THE SCRIPT - replaced with mx-auto
 
 /*btn:hover only effects the anchor elements that are nested within HTML elements containing
 the btn class*/
-.btn:hover,
-.yellow-btn:hover {
+.btn:hover
+/*, .yellow-btn:hover */ {
     color: var(--accent-text-color);
 }
 
 /*TICKET CARDS*/
 
-/*Specifically styles the card class with the div containging the tickets id name*/
-
+/*Specifically styles the card class with the div containing the tickets id name*/
 #tickets .card {
     padding: 40px;
     height: 250px;
     margin-right: 20px;
+    margin-left: 40px;
     background-color: white;
 }
 
@@ -284,6 +250,10 @@ input[type="number"]:focus {
     width: 150px;
     margin-top: 20px;
     margin-bottom: 40px;
+}
+
+.btn:hover, .yellow-btn:hover {
+    color: var(--accent-text-color);
 }
 
 /*CONTACT FORM*/
